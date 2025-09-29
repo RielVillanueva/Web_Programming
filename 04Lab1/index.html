@@ -1,217 +1,157 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RV Productions — Interactive Puzzle</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Website - Arngren Inspired</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background: #000;
-      color: #fff;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+    }
+
+    header {
+      background-color: black;
+      color: yellow;
+      padding: 5px 10px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      padding: 20px;
-      min-height: 100vh;
+      border-bottom: 4px solid lime;
     }
 
-    h1, h2, h3 {
-      font-weight: 900;
-      text-transform: uppercase;
-      text-align: center;
-      letter-spacing: 1px;
-    }
-    h1 { font-size: 2rem; margin-bottom: 10px; }
-    h2 { font-size: 1.2rem; margin: 15px 0 10px; }
-    h3 { font-size: 1rem; margin-bottom: 8px; }
-
- 
-    .puzzle-container {
+    .header {
       display: flex;
+      align-items: center;
       gap: 20px;
-      justify-content: center;
-      align-items: flex-start;
-      flex-wrap: wrap; 
-      margin-bottom: 20px;
-      width: 100%;
     }
 
-    .puzzle-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 500px;
-      flex: 1;
-    }
+    h1 {
+      margin: 10;
+      font-size: 55px;
+      font-family: "Arial Black", sans-serif;
+      padding: 0px 30px 0px 15px;
+    }   
 
-    .puzzle, .reference-puzzle {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, auto);
-      gap: 2px;
-      border: 4px solid #fff;
-      background: #000;
-      width: 100%;
-      max-width: 500px;
-      min-width: 350px;
-    }
-
-    .piece, .ref-piece {
-      background: #111;
+    .search-bar {
       display: flex;
       align-items: center;
-      justify-content: center;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .piece { cursor: grab; }
-    .piece:hover { transform: scale(1.03); box-shadow: 0 0 12px rgba(255,255,255,0.15); z-index: 2; }
-    .piece.dragging { opacity: 0.55; cursor: grabbing; transform: scale(0.98); box-shadow: none; }
-    .piece.over { outline: 3px solid #fff; transform: scale(1.04); box-shadow: 0 0 18px rgba(255,255,255,0.45); }
+    .search-bar input {
+      padding: 8px 0px 8px 10px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+      width: 1030px
+    }
 
-    .puzzle img, .reference-puzzle img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      user-select: none;
+    .search-bar button {
+      padding: 8px 12px;
+      border: none;
+      background: lime;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 0 4px 4px 0;
+    }
+
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15Px 20px;
       display: block;
-      pointer-events: auto;
+      font-weight: bold;
     }
 
-    .reference-puzzle .ref-piece img { pointer-events: none; }
-
-
-    @media (max-width: 920px) {
-      .puzzle, .reference-puzzle { min-width: 260px; max-width: 420px; }
-    }
-    @media (max-width: 600px) {
-      .puzzle, .reference-puzzle { min-width: 180px; max-width: 100%; }
-      .puzzle-box { width: 100%; max-width: none; }
+    nav a:hover {
+      background-color: #ff6600;
     }
 
-    .video-wrap {
-      margin-top: 20px;
-      width: 100%;
-      max-width: 1000px;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+ 
+    .grid-item {
+      background-color: white;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      padding: 15px 15px 15px 15px;
+      text-align: center;
+      box-shadow: 0 4px 8px gray;
+      transition: transform 0.2s;
     }
 
-    video {
-      width: 100%;
-      border: 4px solid #fff;
-      display:block;
+    .grid-item:hover {
+      transform: scale(1.05);
+    }
+
+    .grid-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
     }
 
     footer {
-      margin-top: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: #aaa;
+      background-color: #333;
+      color: white;
       text-align: center;
-      letter-spacing: 0.5px;
+      padding: 15px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Women with Baskets by Anita Magsaysay</h1>
-  <h2>Puzzle Activity</h2>
-
-  <div class="puzzle-container">
-    <div class="puzzle-box">
-      <h3>Interactive Puzzle</h3>
-      <div class="puzzle" id="puzzle">
-        <div class="piece"><img src="5.jpg" alt="piece 5"></div>
-        <div class="piece"><img src="1.jpg" alt="piece 1"></div>
-        <div class="piece"><img src="6.jpg" alt="piece 6"></div>
-        <div class="piece"><img src="3.jpg" alt="piece 3"></div>
-        <div class="piece"><img src="2.jpg" alt="piece 2"></div>
-        <div class="piece"><img src="4.jpg" alt="piece 4"></div>
-      </div>
+  <header>
+    <h1>Arngren.net</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." maxlength="100">
+      <button>Go</button>
     </div>
+  </header>
 
-    <div class="puzzle-box">
-      <h3>Reference</h3>
-      <div class="reference-puzzle">
-        <div class="ref-piece"><img src="4.jpg" alt="piece 4"></div>
-        <div class="ref-piece"><img src="3.jpg" alt="piece 3"></div>
-        <div class="ref-piece"><img src="1.jpg" alt="piece 1"></div>
-        <div class="ref-piece"><img src="6.jpg" alt="piece 6"></div>
-        <div class="ref-piece"><img src="2.jpg" alt="piece 2"></div>
-        <div class="ref-piece"><img src="5.jpg" alt="piece 5"></div>
-      </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <main class="grid-container">
+    <div class="grid-item">
+      <img src= "The new and improved grass klipper.jpg" alt="Product 1">
+      <h3>Gressklipper</h3>
+      <p>The new and improved grass shaver</p>
     </div>
-  </div>
+    <div class="grid-item">
+      <img src= "Mercedes Go Kart.jpg" alt="Product 2">
+      <h3>Mercedes Go Kart</h3>
+      <p>The lates of all Mercedes</p>
+    </div>
+    <div class="grid-item">
+      <img src="how about going oldschool.jpg" alt="Product 3">
+      <h3>el-Fatbike</h3>
+      <p>How about going oldschool?</p>
+    </div>
+    <div class="grid-item">
+      <img src="Just Yoda.jpg" alt="Product 4">
+      <h3>Yoda</h3>
+      <p>Just Yoda.</p>
+    </div>
+  </main>
 
-  <div class="video-wrap">
-    <h2>Artwork Video</h2>
-    <video controls>
-      <source src="Anita.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <footer>© 2025 RV Productions | Drag and drop to solve the puzzle</footer>
-
-  <script>
-    (function () {
-      const puzzle = document.getElementById('puzzle');
-      let dragged = null;
-
-      puzzle.addEventListener('dragstart', e => {
-        const piece = e.target.closest('.piece');
-        if (!piece) return;
-        piece.setAttribute('draggable', 'true');
-        dragged = piece;
-        piece.classList.add('dragging');
-        try { e.dataTransfer.setData('text/plain', ''); } catch (err) {  }
-      });
-
-      puzzle.addEventListener('dragend', e => {
-        const piece = e.target.closest('.piece');
-        if (!piece) return;
-        piece.classList.remove('dragging');
-        dragged = null;
-        puzzle.querySelectorAll('.piece.over').forEach(p => p.classList.remove('over'));
-      });
-
-      puzzle.addEventListener('dragover', e => {
-        e.preventDefault(); 
-        const over = e.target.closest('.piece');
-        puzzle.querySelectorAll('.piece.over').forEach(p => {
-          if (p !== over) p.classList.remove('over');
-        });
-        if (over && over !== dragged) over.classList.add('over');
-      });
-
-      puzzle.addEventListener('drop', e => {
-        e.preventDefault();
-        const target = e.target.closest('.piece');
-
-        if (!dragged) return;
-
-        if (!target) {
-          puzzle.appendChild(dragged);
-        } else if (target === dragged) {
-        } else {
-          const children = Array.from(puzzle.children);
-          const draggedIndex = children.indexOf(dragged);
-          const targetIndex = children.indexOf(target);
-
-          if (draggedIndex < targetIndex) {
-            puzzle.insertBefore(dragged, target.nextSibling);
-          } else {
-            puzzle.insertBefore(dragged, target);
-          }
-        }
-        puzzle.querySelectorAll('.piece.over').forEach(p => p.classList.remove('over'));
-      });
-
-      function ensureDraggables() {
-        puzzle.querySelectorAll('.piece').forEach(p => p.setAttribute('draggable', 'true'));
-      }
-      ensureDraggables();
-    })();
-  </script>
+  <footer>
+    &copy; 2025 Arngren Inspired Website | Designed by Riel Villanueva
+  </footer>
 </body>
 </html>
