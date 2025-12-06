@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact — Riel Villanueva</title>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">RIEL VILLANUEVA</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="banner">
+  <img src="RIEL VILLANUEVA BANNER.png" alt="Site Banner">
+</div>
+
+<section>
+  <h2 class="section-title">Slide into my inbox!</h2>
+
+  <p>Email: <b>rvproductions08@gmail.com</b></p>
+  <p>Facebook: <b>https://www.facebook.com/RVProds</b></p>
+  <p>Instagram: <b>https://www.instagram.com/rvproductions08/</b></p>
+  <br>
+
+  <form>
+    <label>Name:</label><br>
+    <input type="text" style="width:100%; padding:10px;"><br><br>
+
+    <label>Message:</label><br>
+    <textarea style="width:100%; height:150px; padding:10px;"></textarea><br><br>
+
+    <button class="send-btn">Send</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 • Riel Villanueva Portfolio
+</footer>
+
+</body>
+</html>
+
+
+<style> 
+/* ---- Global Reset ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ---- Body ---- */
+body {
+  background: white;
+  color: black; /* FIXED: Make all body text black */
+  line-height: 1.6;
+}
+
+/* ---- Navigation Bar ---- */
+nav {
+  width: 100%;
+  padding: 20px 40px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+nav .logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: black;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black; /* FIXED */
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #0078ff;
+}
+
+/* ---- Banner ---- */
+.banner img {
+  width: 100%;
+  display: block;
+}
+
+/* ---- Section ---- */
+section {
+  width: 60%;
+  max-width: 900px;
+  background: white;
+  padding: 40px 50px;
+  margin: 60px auto;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  color: black;
+  text-transform: uppercase;
+}
+
+/* ---- Form Fields ---- */
+form input, form textarea {
+  border: 2px solid #ddd;
+  transition: 0.3s;
+  color: black; /* FIXED text color */
+}
+
+form input:focus, form textarea:focus {
+  border-color: black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  outline: none;
+}
+
+/* ---- Button ---- */
+.send-btn {
+  padding: 12px 20px;
+  cursor: pointer;
+  background: white;
+  color: black;
+  border: 2px solid black;
+  font-weight: 700;        /* ✔ Make “Send” bold */
+  transition: 0.3s ease;   /* ✔ Smooth hover */
+  border-radius: 6px;
+}
+
+.send-btn:hover {
+  background: black; /* ✔ Turns black */
+  color: white;      /* ✔ Text becomes white */
+  transform: scale(1.05);
+}
+
+/* ---- Footer ---- */
+footer {
+  text-align: center;
+  padding: 30px;
+  margin-top: 60px;
+  background: black;
+  color: white;
+}
+</style>
