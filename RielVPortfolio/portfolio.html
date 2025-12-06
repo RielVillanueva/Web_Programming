@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio — Riel Villanueva</title>
+</head>
+
+<body>
+<nav>
+  <div class="logo">RIEL VILLANUEVA</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="banner">
+  <img src="Portfolio - Banner.png" alt="Site Banner">
+  <div class="banner-text">Lights. <br> Camera. <br> Action.
+    <p>Dive into Riel's creative showcase.<br>Just hit play and let the work do the talking.</p>
+    </div>
+</div>
+
+
+
+
+
+<section class="simple-carousel-section">
+  <h2 class="section-title">PORTRAIT GALLERY</h2>
+  <div class="simple-carousel-container">
+    <button class="simple-arrow left">&#10094;</button>
+    <div class="simple-carousel">
+      <div class="simple-track">
+        <img src="POG .1.jpg">
+        <img src="POG .2.jpg">
+        <img src="POG .3.jpg">
+        <img src="POG .4.jpg">
+        <img src="POG .5.jpg">
+        <img src="POG 1.jpg">
+        <img src="POG 2.jpg">
+        <img src="POG 3.jpg">
+        <img src="POG 4.jpg">
+        <img src="POG 5.jpg">
+        <img src="POG 6.jpg">
+        <img src="POG 7.jpg">
+        <img src="POG 8.jpg">
+        <img src="POG 9.jpg">
+        <img src="POG 10.jpg">
+      </div>
+    </div>
+    <button class="simple-arrow right">&#10095;</button>
+  </div>
+</section>
+
+<section class="simple-carousel-section">
+  <h2 class="section-title">FOOD GALLERY</h2>
+  <div class="simple-carousel-container">
+    <button class="simple-arrow left">&#10094;</button>
+    <div class="simple-carousel">
+      <div class="simple-track">
+        <img src="FG 1.jpg">
+        <img src="FG 2.jpg">
+        <img src="FG 3.jpg">
+        <img src="FG 4.png">
+        <img src="FG 5.png">
+        <img src="FG 6.jpg">
+        <img src="FG 7.jpg">
+        <img src="FG 8.jpg">
+        <img src="FG 9.jpg">
+        <img src="FG 10.jpg">
+        <img src="FG 11.jpg">
+        <img src="FG 12.jpg">
+        <img src="FG 13.jpg">
+        <img src="FG 14.jpg">
+        <img src="FG 15.jpg">
+        <img src="FG 16.jpg">
+        <img src="FG 17.jpg">
+        <img src="FG 18.jpg">
+      </div>
+    </div>
+    <button class="simple-arrow right">&#10095;</button>
+  </div>
+</section>
+
+<section class="simple-carousel-section">
+  <h2 class="section-title">PRODUCT GALLERY</h2>
+  <div class="simple-carousel-container">
+    <button class="simple-arrow left">&#10094;</button>
+    <div class="simple-carousel">
+      <div class="simple-track">
+        <img src="PRG .1.jpg">
+        <img src="PRG 1.jpg">
+        <img src="PRG 2.jpg">
+        <img src="PRG 3.jpg">
+        <img src="PRG 4.jpg">
+        <img src="PRG 5.jpg">
+        <img src="PRG 6.jpeg">
+        <img src="PRG 7.jpg">
+        <img src="PRG 8.jpg">
+        <img src="PRG 9.jpeg">
+        <img src="PRG 10.jpg">
+      </div>
+    </div>
+    <button class="simple-arrow right">&#10095;</button>
+  </div>
+</section>
+
+<footer>
+  © 2025 • Riel Villanueva Portfolio
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
+
+<style> 
+/* ---- Global Reset ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+/* ---- Body ---- */
+body {
+  background: white;
+  color: hsl(0, 0%, 100%);
+  line-height: 1.6;
+}
+
+
+
+/* ---- Navigation Bar ---- */
+nav {
+  width: 100%;
+  padding: 20px 40px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+nav .logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: black;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #0078ff;
+}
+
+.banner img {
+  width: 100%;
+  height: 500px; /* adjust this to make strip thinner or thicker */
+  object-fit: cover;
+  object-position: 50% 40%; /* change this to move the visible area */
+  display: block;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  text-align: center;
+  color: white;
+  font-size: 100px;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* makes it readable on photos */
+  line-height: 1.1
+}
+
+.banner-text p {
+  margin-top: 15px;
+  font-size: 22px;
+  font-weight: 400;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+  line-height: 1.5
+}
+
+/* ---- Footer ---- */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #aaa;
+  background: #000;
+  border-top: 1px solid #222;
+  font-size: 14px;
+}
+
+
+
+
+
+
+.simple-carousel-section {
+  background: white;
+  text-align: center;
+}
+
+.simple-carousel-section {
+  color: black;
+  font-size: 48px;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  color: black;
+  font-size: 48px;
+  letter-spacing: 2px;
+    margin-bottom: 0px;
+      margin-top: 30px;
+}
+
+.simple-carousel-container {
+  position: relative;
+  width: 90%;
+  margin: auto;
+}
+.simple-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.simple-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.simple-track img {
+  width: 350px;     
+  height: 450px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.simple-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 28px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.simple-arrow.left {
+  left: 10px;
+}
+
+.simple-arrow.right {
+  right: 10px;
+}
+
+.simple-arrow:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+
+
+</style> 
+
