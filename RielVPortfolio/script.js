@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const prev = section.querySelector(".simple-arrow.left");
     const next = section.querySelector(".simple-arrow.right");
 
-    // Clone for infinite loop
+  
     images.forEach(img => {
       const clone = img.cloneNode(true);
       track.appendChild(clone);
